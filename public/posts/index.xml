@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ZYT personal site</title>
+    <link>https://example.org/posts/</link>
+    <description>Recent content on ZYT personal site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Nov 2023 16:30:07 +0800</lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://example.org/posts/my-first-post/</link>
+      <pubDate>Fri, 24 Nov 2023 16:30:07 +0800</pubDate>
+      <guid>https://example.org/posts/my-first-post/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit My website!</description>
+    </item>
+    <item>
+      <title>Play music with lyrics in EMMS</title>
+      <link>https://example.org/posts/emmslyrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/emmslyrics/</guid>
+      <description>Although Emms has supported lyrics out of box(Lyrics),
+(require &amp;#39;emms-lyrics) (emms-lyrics 1) but it only displays lyrics when there is lyric files in local directory.
+find.exe outputs file path encoded in utf-8, so you must told emms-source-file-directory-tree-find to use utf-8 parsing file pathes.
+(advice-add &amp;#39;emms-source-file-directory-tree-find :around (lambda(orig &amp;amp;rest args) (let ( (coding-system-for-read &amp;#39;utf-8) ) (apply orig args)))) Instead modify emms-source-file-directory-tree-find directly, I add advice to it to avoid repeating work when updated to the latest version of emms package Auto download lyrics and pop out lyric buffer when download is done.</description>
+    </item>
+  </channel>
+</rss>
