@@ -1,0 +1,18 @@
+#+TITLE: Emacs配置文件
+* View Chm file in Emacs
+
+#+BEGIN_SRC emacs-lisp
+  (require 'dash)
+  (require 'treemacs)
+  (require 'treemacs-treelib)
+  (require 'treemacs-rendering)
+  ;; (require 'w3m)
+  (require 'eww)
+  (require 'dired)
+#+END_SRC
+
+** Parse chm file
+
+** Integrate chm file support 
+
+* 测试Hugo对中文的支持程度
