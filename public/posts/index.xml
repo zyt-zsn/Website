@@ -6,16 +6,7 @@
     <description>Recent content on ZYT personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Nov 2023 16:30:07 +0800</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My First Post</title>
-      <link>https://example.org/posts/my-first-post/</link>
-      <pubDate>Fri, 24 Nov 2023 16:30:07 +0800</pubDate>
-      <guid>https://example.org/posts/my-first-post/</guid>
-      <description>Introduction This is bold text, and this is emphasized text.
-Visit My website!</description>
-    </item>
     <item>
       <title>Add-Translation-Extension-to-everything</title>
       <link>https://example.org/posts/add-translation-extension-to-everything/</link>
