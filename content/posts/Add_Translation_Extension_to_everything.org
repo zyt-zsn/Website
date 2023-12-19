@@ -1,0 +1,93 @@
+#+TITLE: Add-Translation-Extension-to-everything
+As a software engineer, it is inevitable to read books or articles in a non-native language. Although it has become more and more convinent to find the translation for words or even entire paragraphs nowdays, it can still be annoying to interrupt your reading.
+One of the most attractive aspects of Emacs is its customization according to individual needs. I've always aimed to read materials of different formats entirely within Emacs. Today, I'll guide you in adding an auto-translation extension to your Universal Reader Emacs. 
+
+The giant's shoulders I'm going to stand on are those of [[https://github.com/lorniu/go-translate][Go-translate]], a powerful translator for Emacs developed by [[lorniu@gmail.com][lorniu]]. I truely appreciate lorniu's execlent work. Good job, buddy!
+
+Go-translate is so well-designed that it supports rendering different translation results from multiple engines into one buffer. While this is great, I, however, don't indend to use this feature. What I want is to select one of my favourite engines(in this case, google-translate-engine) and have it to automatically display translations side by side. Whenever I encounter words, sentences, or paragraph that are difficult to understand, the translation is already there, not bothering me to interrupt my reading. Yeah, that's what I want.
+
+- Find the suitable API in go-translat.
+  * 
+- Get a universal method to extract the current text your are reading.
+  * 
+- Find out the best way to trigger translation process and to display the result.
+  * Using a shortcut key
+	#+begin_src emacs-lisp
+	  (defvar zyt-granslation-minor-mode-map
+		(let ((map (make-sparse-keymap)))
+		  (define-key map (kbd "C-t") (lambda()
+										(interactive)
+										(zyt-translate)
+										))
+		  map
+		  ))
+    #+end_src
+
+  * Using the page scroll
+	I did not find a suitable hook specifically executed when scrolling throuth a buffer window, and finally settled on using the 'post-command-hook'.If there is a more appropriate hook, please leave a comment below and let me know.(Note: 'window-scroll-functions' is not a preferable choice)
+	#+begin_src emacs-lisp
+	  (defun zyt-auto-translate-hook()
+		(when (and zyt-translation-minor-mode
+				   (symbolp this-command)
+				   (or
+					(string-search "scroll-up" (symbol-name this-command))
+					(string-search "scroll-down" (symbol-name this-command))
+					))
+		  (if zyt-auto-translate-timer
+			  (cancel-timer zyt-auto-translate-timer))
+		  (setq zyt-auto-translate-timer (run-at-time 1.5 nil 'zyt-translate))
+		  )
+		)
+    #+end_src
+
+- Define a minor mode so as to enable 'auto' translation on your demand
+  #+begin_src emacs-lisp
+	(define-minor-mode zyt-translation-minor-mode
+	  "Auto translate current buffer to english"
+	  :init-value nil
+	  :lighter " aTs"
+	  :keymap zyt-granslation-minor-mode-map
+	  :after-hook
+	  (when zyt-translation-minor-mode
+		(add-hook 'post-command-hook 'zyt-auto-translate-hook 0 t)
+		(zyt-translate))
+	  )
+  #+end_src
+
+- Extra tunings
+  * Filter out unintended translation triggers
+	When scrolling throuth many pages continuously, translating every page may not be desired. Therefore, instead of sending a translation request for every scroll operation, initialize the translation only after 1.5 seconds have passed since the most recent scroll operation.
+  * Only translate the parts that interest you
+  * Try to keep the original layout format as much as possible
+	The google translation engine requires the sentences not to be split by unnecessory new line seperators(`\n`). In my opinion, this should be an easy fix for Google.
+	Unfortunately, due to limit of window width, the buffer content inserts many new-line characters when truncated at the window edge. So I have to replace all the unnecessory new-line seperators with regexp replacement.
+	#+begin_src emacs-lisp
+	  (let (text (s-replace-regexp "\\([^\\\.\\\:\\\n]\\{60\\}\\)\\\n" "\\1 " text-to-translate))
+		...
+		)
+    #+end_src
+	The purpose of backslash construct \{60\} is to preverve the intended new-line seperator, as in the following section from [[https://www.rfc-editor.org/rfc/rfc2437.txt][rfc2437]]:
+	#+begin_src text
+					  PKCS #1: RSA Cryptography Specifications
+										Version 2.0
+
+	  Status of this Memo
+
+			 This memo provides information for the Internet community.  It does
+			 not specify an Internet standard of any kind.  Distribution of this
+			 memo is unlimited.
+
+	  Copyright Notice
+
+			 Copyright (C) The Internet Society (1998).  All Rights Reserved.
+
+	  Table of Contents
+
+			 1.       Introduction.....................................2
+    #+end_src
+
+- Screenshorts of final display effect
+
+#+DOWNLOADED: file:D%3A/zyt/Personal/website/quickstart/content/posts/zyt-translation.png @ 2023-12-19 18:29:33
+[[file:2023-12-19_18-29-33_zyt-translation.png]]
+
