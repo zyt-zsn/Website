@@ -86,7 +86,7 @@ Go-translate is so well-designed that it supports rendering different translatio
 			 1.       Introduction.....................................2
     #+end_src
 
-- Screenshorts of final display effect
+- Screenshort of final display effect
 
 #+DOWNLOADED: file:D%3A/zyt/Personal/website/quickstart/content/posts/zyt-translation.png @ 2023-12-19 18:29:33
 [[file:2023-12-19_18-29-33_zyt-translation.png]]
