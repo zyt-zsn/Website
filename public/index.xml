@@ -6,7 +6,16 @@
     <description>Recent content on ZYT personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 24 Nov 2023 16:30:07 +0800</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://example.org/posts/my-first-post/</link>
+      <pubDate>Fri, 24 Nov 2023 16:30:07 +0800</pubDate>
+      <guid>https://example.org/posts/my-first-post/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit My website!</description>
+    </item>
     <item>
       <title></title>
       <link>https://example.org/about/</link>
@@ -16,9 +25,9 @@
     </item>
     <item>
       <title>Add-Translation-Extension-to-everything</title>
-      <link>https://example.org/posts/add-translation-extension-to-everything/</link>
+      <link>https://example.org/posts/add_translation_extension_to_everything/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/add-translation-extension-to-everything/</guid>
+      <guid>https://example.org/posts/add_translation_extension_to_everything/</guid>
       <description>As a software engineer, it is inevitable to read books or articles in a non-native language. Although it has become more and more convinent to find the translation for words or even entire paragraphs nowdays, it can still be annoying to interrupt your reading. One of the most attractive aspects of Emacs is its customization according to individual needs. I&amp;#39;ve always aimed to read materials of different formats entirely within Emacs.</description>
     </item>
     <item>
