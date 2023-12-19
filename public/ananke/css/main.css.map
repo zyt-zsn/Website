@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "d:/zyt/Personal/website/quickstart",
+	"sourceRoot": "d:/zyt/Personal/website/github-version",
 	"sources": [
 		"ananke/css/main.css"
 	],

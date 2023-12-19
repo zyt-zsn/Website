@@ -1,4 +1,4 @@
-# -*- coding: utf-8; -*-
+#+TITLE: Add-Translation-Extension-to-everything
 As a software engineer, it is inevitable to read books or articles in a non-native language. Although it has become more and more convinent to find the translation for words or even entire paragraphs nowdays, it can still be annoying to interrupt your reading.
 One of the most attractive aspects of Emacs is its customization according to individual needs. I've always aimed to read materials of different formats entirely within Emacs. Today, I'll guide you in adding an auto-translation extension to your Universal Reader Emacs. 
 

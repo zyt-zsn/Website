@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ZYT personal site</title>
+    <title>ZYT personal website</title>
     <link>https://example.org/</link>
-    <description>Recent content on ZYT personal site</description>
+    <description>Recent content on ZYT personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Nov 2023 16:30:07 +0800</lastBuildDate>
@@ -15,6 +15,20 @@
       <guid>https://example.org/posts/my-first-post/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit My website!</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/about/</guid>
+      <description>A programmer sticking to solving any problem with emacs.</description>
+    </item>
+    <item>
+      <title>Add-Translation-Extension-to-everything</title>
+      <link>https://example.org/posts/add-translation-extension-to-everything/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/add-translation-extension-to-everything/</guid>
+      <description>As a software engineer, it is inevitable to read books or articles in a non-native language. Although it has become more and more convinent to find the translation for words or even entire paragraphs nowdays, it can still be annoying to interrupt your reading. One of the most attractive aspects of Emacs is its customization according to individual needs. I&amp;#39;ve always aimed to read materials of different formats entirely within Emacs.</description>
     </item>
     <item>
       <title>Emacs配置文件</title>
